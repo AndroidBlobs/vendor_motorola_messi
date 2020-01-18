@@ -1,0 +1,11 @@
+service vendor.maya-hal-2-0 /vendor/bin/hw/motorola.hardware.maya@2.0-service
+    # Serves IMaya interface (part of init dyanmic HAL support)
+    interface motorola.hardware.maya@2.0::IMaya default
+    class hal
+    user system
+    group system wakelock
+    capabilities BLOCK_SUSPEND
+    # will not be restarted if it exits until it is requested to be restarted
+    oneshot
+    # will only be started when requested
+    disabled
